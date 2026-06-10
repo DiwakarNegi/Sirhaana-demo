@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:           #09090B;
+  --surface:      #111113;
+  --card:         #18181B;
+  --card-alt:     #1C1C1F;
+  --card-2:       #27272A;
+  --border:       rgba(255,255,255,0.06);
+  --border-strong:rgba(255,255,255,0.12);
+  --border-nav:   rgba(39,39,42,0.5);
+  --accent:       #3B82F6;
+  --cyan:         #00D4FF;
+  --accent-soft:  rgba(59,130,246,0.10);
+  --accent-glow:  rgba(59,130,246,0.20);
+  --cyan-soft:    rgba(0,212,255,0.10);
+  --text:         #FAFAFA;
+  --text-2:       #E4E4E7;
+  --text-3:       #A1A1AA;
+  --text-4:       #71717A;
+  --text-5:       #52525B;
+  --text-6:       #3F3F46;
+  --red:          #FF5F56;
+  --yellow:       #FFBD2E;
+  --green:        #27C93F;
+}
+
+html { color-scheme: dark; }
+
+body {
+  background: var(--bg);
+  color: var(--text-2);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content:'';
+  position: fixed; inset: 0;
+  background:
+    radial-gradient(800px 400px at 80% -10%, rgba(0,212,255,0.06), transparent 60%),
+    radial-gradient(900px 500px at 10% 110%, rgba(59,130,246,0.05), transparent 60%);
+  pointer-events: none; z-index: 0;
+}
+
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+@keyframes fadeIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:none} }
+
+.animate-pulse-dot { animation: pulse 2s infinite; }
+.animate-blink { animation: blink 1s step-end infinite; }
+.animate-fadeIn { animation: fadeIn 0.25s ease; }
